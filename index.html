@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Eagleland | An EarthBound Travel Guide</title>
+    <meta
+      name="description"
+      content="Plan a road trip through Eagleland, the country from EarthBound. Four towns on one road, from quiet Onett to big-city Fourside."
+    />
+    <link rel="stylesheet" href="styles/normalize-fwd.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <p>
+        The Tourism Board accepts no liability for alien encounters, psychic
+        phenomena, or unscheduled travel to other dimensions.
+      </p>
+      <nav>
+        <a href="index.html">Visit Eagleland</a>
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="onett.html">Onett</a></li>
+          <li><a href="fourside.html">Fourside</a></li>
+          <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <a href="index.html#contact-us" class="contact-link">Contact us</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section>
+        <h1>Welcome to Eagleland</h1>
+        <p class="subheading">Four towns. One unforgettable road trip.</p>
+        <p>
+          Tour through all four towns on one highway. Start in quiet Onett and
+          end in busy Fourside, with plenty of stops along the way.
+        </p>
+        <a href="onett.html">Begin your trip in Onett</a>
+      </section>
+
+      <section>
+        <h2>Plan your trip</h2>
+        <p>
+          Getting around Eagleland is as easy as one-two-three-four, because the
+          towns are numbered in the order you'll reach them: Onett, Twoson,
+          Threed, then Fourside.
+        </p>
+
+        <h3>Where to visit</h3>
+        <div class="town-cards">
+          <article>
+            <h4>Onett</h4>
+            <p>
+              Hilltop views from the famous meteorite site. Grab a burger or a cookie for a hike
+              out to Giant Step.
+            </p>
+            <a href="onett.html">Take me to Onett</a>
+          </article>
+
+          <article>
+            <h4>Twoson</h4>
+            <p>
+              Weekend markets in Burglin Park and live music at the Chaos
+              Theater. Happy Happy Village is a short day trip away.
+            </p>
+          </article>
+
+          <article>
+            <h4>Threed</h4>
+            <p>
+              An old circus town full of character. Guided tours run daily.
+              Please be back at your hotel by sundown.
+            </p>
+          </article>
+
+          <article>
+            <h4>Fourside</h4>
+            <p>
+              Shopping, theater, museums, and a downtown café that's worth the
+              stop. Book a private tour of the Monotoli Building.
+            </p>
+            <a href="fourside.html">Take me to Fourside</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <h2 id="contact-us">Ask the Tourism Board</h2>
+        <p>
+          Tell us where you'd like to go, and we'll send back routes, tips, and
+          places to stay. Our visitor center replies within two business days.
+        </p>
+
+        <form action="#" method="POST">
+          <fieldset>
+            <legend>All fields are required</legend>
+            <div>
+              <label for="userName">Name:</label>
+              <input
+                type="text"
+                id="userName"
+                name="username"
+                placeholder="Frank Fly"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="userEmail">Email:</label>
+              <input
+                type="email"
+                id="userEmail"
+                name="email"
+                placeholder="example@fuzzypickles.com"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="userMessage">Message:</label>
+              <p id="message-hint">
+                Include your travel dates and any questions you have.
+              </p>
+              <textarea
+                aria-describedby="message-hint"
+                id="userMessage"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit">Send my message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p>
+          Visit Eagleland is a fan-made school project. EarthBound and Eagleland
+          belong to Nintendo.
+        </p>
+        <span>
+          <p>Questions? Use the form above to send it to us.</p>
+          <p>...Tourism Board</p></span
+        >
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="onett.html">Onett</a></li>
+            <li><a href="fourside.html">Fourside</a></li>
+            <li><a href="credits.html">Credits</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
