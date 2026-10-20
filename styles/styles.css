@@ -1,18 +1,472 @@
+/* #region TYPOGRAPHY */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: "Atkinson Hyperlegible Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/atkinson-hyperlegible-mono-v8-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
   font-family: "Press Start 2P";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/press-start-2p-v16-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/press-start-2p-v16-latin-regular.woff2") format("woff2");
+}
+
+body {
+  font-family: "Atkinson Hyperlegible Mono";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #0c0226;
 }
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: "Press Start 2P";
+  text-align: center;
+  word-spacing: -0.5em;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  padding-top: 3rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  letter-spacing: -0.03rem;
+  margin: 0 2rem;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+/* #endregion */
+
+/* #region LINKS */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.25rem 0.5rem;
+  color: #ffffff;
+  background-color: #c63753;
+  font-weight: 700;
+  border: 0.125rem solid transparent;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+a:visited {
+  color: currentColor;
+}
+
+a:hover,
+a:focus-visible {
+  color: #ffffff;
+  background-color: #0c0226;
+  border-color: #ffffff;
+  outline-offset: 0.125rem;
+}
+
+a:active {
+  background-color: #e09828;
+}
+
+.sec-btn,
+.sec-btn-cs {
+  background-color: transparent;
+  border: 0.125rem solid #0c0226;
+  color: #0c0226;
+}
+
+.sec-btn-cs,
+.sec-btn-cs:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: #0c0226;
+}
+
+.ter-btn {
+  background-color: transparent;
+  border: 0.125rem solid #ffffff;
+  color: #0c0226;
+}
+.ter-btn:hover {
+  border-color: transparent;
+  background-color: #ffffff;
+  color: #0c0226;
+}
+
+.menu-item a {
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 0 0.25rem;
+  margin: 0;
+  background-color: transparent;
+  padding-block: 0.5rem;
+}
+
+.menu-item a:hover,
+.menu-item a:focus-visible {
+  border-color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+
+.menu-item a:active {
+  background-color: #e09828;
+}
+
+.contact-link a {
+  color: #f5ea53;
+  font-size: 0.75rem;
+  background-color: transparent;
+  margin: 0;
+  padding-left: 1.25rem;
+  padding-block: 0.5rem;
+}
+
+.contact-link a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/* .window-contact-link a {
+  color: #f5ea53;
+  font-size: 0.75rem;
+  background-color: transparent;
+  margin: 0;
+  padding-left: 1.25rem;
+  padding-block: 0.5rem;
+}
+
+.window-contact-link a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+  border-color: transparent;
+  background-color: transparent;
+} */
+
+.site-name {
+  margin-bottom: 0;
+}
+
+.site-name:hover,
+.site-name:active {
+  border-color: transparent;
+  justify-self: center;
+  background-color: transparent;
+}
+
+/* #endregion */
+
+/* --------------- ELEMENTS --------------- */
+
+/* #region TEXT WINDOW */
+.window {
+  color: #ffffff;
+  background-color: #0c0226;
+  padding: 0.25rem 0;
+  box-shadow:
+    0 0 0.05rem 0.2rem #c63753 inset,
+    0 0 0.05rem 0.5rem #ffffff inset,
+    0 0 0.25rem 0.75rem #c63753 inset;
+  border-radius: 0.8rem;
+  outline: 0.125rem solid #0c0226;
+}
+
+.window p::before {
+  content: "• " / "";
+  font-size: 1.25rem;
+}
+
+.window p {
+  padding-left: 1rem;
+  text-indent: -1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.window a {
+  width: auto;
+  margin-inline: 1.5rem;
+  text-align: center;
+}
+
+.window audio {
+  width: 100%;
+}
+/* #endregion */
+
+/* #region ANNOUNCEMENT BAR */
+.announcement-bar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #0c0226;
+  padding: 1rem 0;
+}
+
+.announcement-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+.announcement-track span {
+  white-space: nowrap;
+  padding-right: 2.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  color: #ffffff;
+  background-color: #0c0226;
+}
+
+.announcement-bar:focus .announcement-track,
+.announcement-bar .announcement-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+/* #endregion */
+
+.town-facts {
+  display: block;
+  font-size: 0.75rem;
+}
+
+/* ---------------  HOME PAGE LAYOUT ---------------  */
+
+/* #region HEADER */
+.header-nav {
+  padding: 0.5rem 0;
+  background-color: #2f0999;
+}
+
+.header-nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1.125rem 0;
+  justify-content: space-between;
+  background-color: #2f0999;
+}
+
+.site-name {
+  background-color: transparent;
+  max-width: clamp(17.5rem, 30vw, 50vw);
+  padding: 0;
+}
+
+.site-name img {
+  display: block;
+  width: 100%;
+  filter: drop-shadow(0.125rem 0.125rem 0);
+}
+/* #endregion */
+
+/* #region HERO SECTION */
+.hero-section {
+  display: grid;
+}
+
+.hero-img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  object-position: left;
+}
+
+.hero-section > .window {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  max-width: 37.5rem;
+  margin: 1rem 1.5rem;
+}
+/* #endregion */
+
+/* #region TOWN CARDS */
+.town-cards article {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 1rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  color: #0c0226;
+  background-color: #ffffff;
+}
+
+.town-cards article > p {
+  margin: 0 1rem;
+  padding-bottom: 1rem;
 }
 
 .town-map {
-    max-width: 12rem;
+  max-height: 10rem;
+  width: auto;
+  object-fit: cover;
+}
+/* #endregion */
+
+/* #region CONTACT FORM */
+
+form {
+  max-width: 46.25rem;
+  margin-inline: auto;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+form > p,
+.form-field > p {
+  margin: 0;
+  padding-top: 0.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+}
+
+.form-field input,
+.form-field textarea {
+  line-height: 1.5;
+}
+
+.form-button {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* button:hover,
+button:focus {
+  background: black;
+  color: white;
+}   */
+
+.contact-section > .window {
+  margin: 1rem;
+  padding: 0.75rem 0 0.5rem 0;
+}
+
+.signature p:last-of-type {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  text-indent: 0;
+  align-items: baseline;
+  margin-left: 1.5rem;
+}
+/* #endregion */
+
+/* #region Footer */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.5rem;
+  background-color: #2f0999;
+  color: #ffffff;
+  align-items: baseline;
+  padding: 1.5rem 1rem;
+}
+
+.footer-container p {
+  margin: 0;
+}
+
+.footer-nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.copyright {
+  margin-bottom: 0;
+}
+/* #endregion */
+
+.town-banner {
+  margin: 0;
+}
+
+.town-banner figcaption {
+  font-size: 0.75rem;
+  margin: 0.25rem 1.25rem;
+}
+
+.map-link {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  background-color: transparent;
+  margin-inline: auto;
+}
+
+.town-banner-img {
+  display: block;
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  object-position: bottom;
+  image-rendering: pixelated;
 }

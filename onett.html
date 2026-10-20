@@ -10,74 +10,130 @@
     />
     <link rel="stylesheet" href="styles/normalize-fwd.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/favicon-192x192.png"
+    />
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
-      <p>
-        The Tourism Board accepts no liability for alien encounters, psychic
-        phenomena, or unscheduled travel to other dimensions.
-      </p>
-      <nav>
-        <a href="index.html">Visit Eagleland</a>
+      <div
+        class="announcement-bar"
+        tabindex="0"
+        role="region"
+        aria-label="Announcement"
+      >
+        <div class="announcement-track">
+          <span>
+            The Tourism Board accepts no liability for alien encounters, psychic
+            phenomena, or unscheduled travel to other dimensions. </span
+          ><span aria-hidden="true">
+            The Tourism Board accepts no liability for alien encounters, psychic
+            phenomena, or unscheduled travel to other dimensions.
+          </span>
+        </div>
+      </div>
+
+      <nav class="header-nav" aria-label="Main">
+        <div class="contact-link">
+          <a href="index.html#contact-us">Contact us</a>
+        </div>
+
+        <a href="index.html" class="site-name"
+          ><img src="images/eagleland-logo.png" alt="Visit Eagleland home" />
+        </a>
+
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="onett.html" aria-current="page">Onett</a></li>
-          <li><a href="fourside.html">Fourside</a></li>
-          <li><a href="credits.html">Credits</a></li>
+          <li class="menu-item">
+            <a href="onett.html" aria-current="page">Onett</a>
+          </li>
+          <li class="menu-item"><a href="fourside.html">Fourside</a></li>
+          <li class="menu-item"><a href="credits.html">Credits</a></li>
         </ul>
-        <a href="index.html#contact-us" class="contact-link">Contact us</a>
       </nav>
     </header>
 
     <main id="main-content">
       <section>
-        <h1>Onett</h1>
-        <p class="subheading">The place everyone starts out.</p>
-        <figure>
+        <figure class="town-banner">
           <a
             href="https://cdn.wikibound.info/f/f8/OnettMap.png"
             target="_blank"
             rel="noopener noreferrer"
+            class="map-link"
             ><img
               src="images/onett-map.webp"
               alt="Map of Onett from EarthBound (opens full size in a new tab)"
-              class="town-map"
+              class="town-banner-img"
           /></a>
-          <figcaption>Tap or click to view the full map (opens in a new tab)</figcaption>
+          <figcaption>
+            Tap or click to view the full map (opens in a new tab)
+          </figcaption>
         </figure>
-        <p>
-          Every great trip needs a beginning. In Eagleland, you'll find it in
-          the hills, in a quiet town called Onett. Browse the public library,
-          grab a burger, or lose an afternoon at the arcade.
-        </p>
-        <p>
-          Onett is also the hometown of a boy named Ness. One night, a meteorite
-          crashed on the hill above his house. He went up to take a look, and
-          didn't come home for quite a while.
-        </p>
-        <p>Most days, nothing much happens here.</p>
-        <p>Onett has a population of 3,500 people and two dogs, an average temperature of 72°F, and an annual rainfall of 10 inches.</p>
-      </section>
 
-      <section class="onett-audio">
-        <h2>Listen to Onett</h2>
-        <p>
-          Press play to hear the official music of Onett. The Tourism Board
-          describes it as "the feeling of riding your bike home before dinner."
-        </p>
-        <audio controls>
-          <source src="media/onett.m4a" type="audio/mp4" />
+        <section>
+          <h1>Onett</h1>
+          <!-- <p class="subheading">The place everyone starts out.</p> -->
+          <span class="town-facts">
+            <p>Population: 3,500 (+2 dogs)</p>
+            <p>Average temperature: 72°F</p>
+            <p>Annual rainfall: 10 inches</p></span
+          >
+
           <p>
-            Your browser can't play this audio. Try humming something cheerful
-            instead.
+            Every great trip needs a beginning. In Eagleland, you'll find it in
+            the hills, in a quiet town called Onett. Browse the public library,
+            grab a burger, or lose an afternoon at the arcade.
           </p>
-        </audio>
+          <p>
+            Onett is also the hometown of a boy named Ness. One night, a
+            meteorite crashed on the hill above his house. He went up to take a
+            look, and didn't come home for quite a while.
+          </p>
+          <p>Most days, nothing much happens here.</p>
+        </section>
+
+        <div class="window">
+          <h2>Listen to Onett</h2>
+          <p>Press play to hear the official music of Onett.</p>
+          <p>
+            The Tourism Board describes it as "the feeling of riding your bike
+            home before dinner."
+          </p>
+          <audio controls>
+            <source src="media/onett.m4a" type="audio/mp4" />
+            <p>
+              Your browser can't play this audio. Try humming something cheerful
+              instead.
+            </p>
+          </audio>
+        </div>
       </section>
 
       <section class="things-to-see">
         <h2>Things to see</h2>
-        <ul>
+        <ul class="town-cards">
           <li>
             <article>
               <h3>The Hilltop</h3>
@@ -153,8 +209,8 @@
             are back to minding their own business.
           </li>
           <li>
-            The local drugstore has snacks, travel supplies, an ATM, and a phone.
-            Stock up before you head out of town.
+            The local drugstore has snacks, travel supplies, an ATM, and a
+            phone. Stock up before you head out of town.
           </li>
           <li>
             The family living in the house beside the Hilltop has had a busy few
@@ -175,30 +231,34 @@
         </figure>
       </section>
 
-      <section>
-        <h2>Skipping two and three? We won't tell.</h2>
+      <div class="window">
+        <p class="subheading">Skipping two and three? We won't tell.</p>
         <a href="fourside.html">Take me to Fourside</a>
-      </section>
+      </div>
+
+      <div>
+        <h3>Questions?</h3>
+        <a href="index.html#contact-us" class="ter-btn"
+          >Ask the Tourism Board</a
+        >
+      </div>
     </main>
 
     <footer>
       <div class="footer-container">
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item"><a href="onett.html">Onett</a></li>
+            <li class="menu-item"><a href="credits.html">Credits</a></li>
+            <li class="menu-item"><a href="fourside.html">Fourside</a></li>
+          </ul>
+        </nav>
         <p>
           Visit Eagleland is a fan-made school project. EarthBound and Eagleland
           belong to Nintendo.
         </p>
-        <span>
-          <p>Questions?</p>
-          <a href="index.html#contact-us">Ask the Tourism Board</a></span
-        >
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="onett.html">Onett</a></li>
-            <li><a href="fourside.html">Fourside</a></li>
-            <li><a href="credits.html">Credits</a></li>
-          </ul>
-        </nav>
+        <p class="copyright">&copy; 2026, Kim Janzen</p>
       </div>
     </footer>
   </body>
