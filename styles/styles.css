@@ -1,4 +1,20 @@
-/* #region TYPOGRAPHY */
+/* TABLE OF CONTENTS
+
+1. FONTS
+2. GLOBAL
+3. ELEMENTS
+4. LAYOUT
+5. COMPONENTS
+6. PAGE-SPECIFIC
+7. UTILITIES
+8. MEDIA QUERIES
+
+*/
+
+/* ==========================================================================
+   1. FONTS
+   ========================================================================== */
+
 @font-face {
   font-display: swap;
   font-family: "Atkinson Hyperlegible Mono";
@@ -16,17 +32,9 @@
   src: url("../fonts/press-start-2p-v16-latin-regular.woff2") format("woff2");
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
+/* ==========================================================================
+   2. GLOBAL
+   ========================================================================== */
 
 main {
   background-color: #0c0226;
@@ -41,6 +49,11 @@ body {
   background-color: #0c0226;
 }
 
+/* ==========================================================================
+   3. ELEMENTS
+   ========================================================================== */
+
+/* --- Typography --- */
 h1,
 h2,
 h3,
@@ -70,24 +83,7 @@ p {
   margin: 0 2rem 1rem;
 }
 
-.subheading {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-/* #endregion */
-
-/* #region LINKS */
-.skip-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
-  z-index: 10;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
+/* --- Links --- */
 a {
   color: #ffffff;
   text-decoration: underline;
@@ -105,6 +101,167 @@ a:focus-visible {
   outline-offset: 0.125rem;
 }
 
+/* --- Tables --- */
+table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  color: #0c0226;
+}
+
+td > a {
+  color: #0c0226;
+}
+
+td > a:hover,
+td > a:focus-visible {
+  color: #c63753;
+}
+
+th,
+caption {
+  background-color: #2f0999;
+  color: #ffffff;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.875rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3fdd9;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  font-style: italic;
+  border-left: 0.125rem solid #ffffff;
+  padding-left: 1.25rem;
+  margin-right: 1.5rem;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+figure {
+  margin: 2.5rem 1.5rem 4rem 0;
+}
+
+figcaption {
+  font-size: 0.875rem;
+  margin: 0.5rem 1.25rem 1.5rem;
+}
+
+/* ==========================================================================
+   4. LAYOUT
+   ========================================================================== */
+
+/* --- Header --- */
+.header-nav {
+  padding: 0.5rem 0;
+  background-color: #2f0999;
+}
+
+.header-nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1.125rem 0;
+  justify-content: space-between;
+  /* background-color: #2f0999; */
+}
+
+.site-name {
+  display: block;
+  max-width: clamp(17.5rem, 30vw, 50vw);
+  margin-inline: auto;
+  margin-bottom: 0;
+}
+
+.site-name img {
+  display: block;
+  width: 100%;
+  filter: drop-shadow(0.125rem 0.125rem 0);
+}
+
+.contact-link a {
+  display: block;
+  color: #f5ea53;
+  font-size: 0.75rem;
+  padding-left: 1.25rem;
+  padding-block: 0.5rem;
+  text-decoration: none;
+}
+
+.contact-link a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+
+.menu-item a {
+  display: block;
+  color: #ffffff;
+  font-weight: 400;
+  padding: 0 0.25rem;
+  padding-block: 0.5rem;
+  text-decoration: none;
+}
+
+.menu-item a:hover,
+.menu-item a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+
+.menu-item [aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+
+/* --- Footer --- */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.5rem;
+  background-color: #2f0999;
+  color: #ffffff;
+  align-items: baseline;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-container p {
+  margin: 0;
+}
+
+.footer-nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.copyright {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   5. COMPONENTS
+   ========================================================================== */
+
+/* --- Buttons --- */
 .button {
   display: block;
   width: fit-content;
@@ -139,13 +296,6 @@ a:focus-visible {
   color: #0c0226;
 }
 
-.secondary-false {
-  font-weight: 700;
-  text-align: center;
-  margin-top: auto;
-  color: #0c0226;
-}
-
 .tertiary {
   background-color: transparent;
   color: #ffffff;
@@ -157,94 +307,11 @@ a:focus-visible {
 
 .tertiary:hover,
 .tertiary:focus-visible {
-  border-color: #ffffff;
   background-color: #ffffff;
   color: #0c0226;
 }
 
-.menu-item a {
-  display: block;
-  color: #ffffff;
-  font-weight: 400;
-  padding: 0 0.25rem;
-  padding-block: 0.5rem;
-  text-decoration: none;
-}
-
-.menu-item a:hover,
-.menu-item a:focus-visible {
-  text-decoration: underline;
-  text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.25rem;
-}
-
-.contact-link a {
-  display: block;
-  color: #f5ea53;
-  font-size: 0.75rem;
-  padding-left: 1.25rem;
-  padding-block: 0.5rem;
-  text-decoration: none;
-}
-
-.contact-link a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.25rem;
-}
-
-.map-link {
-  display: block;
-  width: 100%;
-}
-
-/* #endregion */
-
-/* --------------- ELEMENTS --------------- */
-
-/* #region TEXT WINDOW */
-.window {
-  color: #ffffff;
-  background-color: #0c0226;
-  padding: 0.25rem 0;
-  box-shadow:
-    0 0 0.05rem 0.2rem #c63753 inset,
-    0 0 0.05rem 0.5rem #ffffff inset,
-    0 0 0.25rem 0.75rem #c63753 inset;
-  border-radius: 0.8rem;
-  outline: 0.125rem solid #0c0226;
-  margin: 1.5rem 1rem;
-}
-
-.window p::before {
-  content: "• " / "";
-  font-size: 1.25rem;
-}
-
-.window p {
-  padding-left: 1rem;
-  text-indent: -1.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.window .button {
-  width: auto;
-  margin-inline: 1.5rem;
-  text-align: center;
-}
-
-.window audio {
-  display: block;
-  width: calc(100% - 3rem);
-  margin: 1rem 1.5rem;
-}
-
-.window h2 {
-  padding: 1rem;
-}
-/* #endregion */
-
-/* #region ANNOUNCEMENT BAR */
+/* --- Announcement bar --- */
 .announcement-bar {
   width: 100%;
   overflow: hidden;
@@ -288,62 +355,58 @@ a:focus-visible {
     overflow-x: auto;
   }
 }
-/* #endregion */
 
-/* ---------------  HOME PAGE LAYOUT ---------------  */
-
-/* #region HEADER */
-.header-nav {
-  padding: 0.5rem 0;
-  background-color: #2f0999;
+/* --- Text window--- */
+.window {
+  color: #ffffff;
+  background-color: #0c0226;
+  padding: 0.25rem 0;
+  box-shadow:
+    0 0 0.05rem 0.2rem #c63753 inset,
+    0 0 0.05rem 0.5rem #ffffff inset,
+    0 0 0.25rem 0.75rem #c63753 inset;
+  border-radius: 0.8rem;
+  outline: 0.125rem solid #0c0226;
+  margin: 1.5rem 1rem;
 }
 
-.header-nav ul {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem 1.125rem 0;
-  justify-content: space-between;
-  /* background-color: #2f0999; */
+.window p::before {
+  content: "• " / "";
+  font-size: 1.25rem;
 }
 
-.site-name {
+.window p {
+  padding-left: 1rem;
+  text-indent: -1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.window .button {
+  width: auto;
+  margin-inline: 1.5rem;
+  text-align: center;
+}
+
+.window audio {
   display: block;
-  max-width: clamp(17.5rem, 30vw, 50vw);
-  margin-inline: auto;
-  margin-bottom: 0;
-}
-
-.site-name img {
-  display: block;
-  width: 100%;
-  filter: drop-shadow(0.125rem 0.125rem 0);
-}
-/* #endregion */
-
-/* #region HERO SECTION */
-.hero-section {
-  display: grid;
-}
-
-.hero-img {
-  width: 100%;
-  height: 40rem;
-  object-fit: cover;
-  object-position: left;
-}
-
-.hero-section > .window {
-  position: absolute;
-  justify-self: center;
-  align-self: center;
-  max-width: 37.5rem;
+  width: calc(100% - 3rem);
   margin: 1rem 1.5rem;
 }
-/* #endregion */
 
-/* #region TOWN CARDS */
+.window h2 {
+  padding: 1rem;
+}
+
+.signature p:last-of-type {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  text-indent: 0;
+  align-items: baseline;
+  margin-left: 1.5rem;
+}
+
+/* --- Town cards--- */
 .town-cards article {
   display: flex;
   flex-direction: column;
@@ -364,14 +427,61 @@ a:focus-visible {
   width: auto;
   object-fit: cover;
 }
-/* #endregion */
 
-/* #region CONTACT FORM */
-
-.contact-section {
-  padding-inline: 1rem;
+.coming-soon {
+  font-weight: 700;
+  text-align: center;
+  margin-top: auto;
+  color: #0c0226;
 }
 
+/* --- Town banner--- */
+.town-banner {
+  margin: 0;
+}
+
+.town-banner figcaption {
+  font-size: 0.75rem;
+  margin: 0.25rem 1.25rem 1.75rem;
+}
+
+.town-banner-img {
+  display: block;
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.map-link {
+  display: block;
+  width: 100%;
+}
+
+.sharpen-img {
+  image-rendering: pixelated;
+}
+
+/* --- Town facts--- */
+.town-facts {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.town-facts p {
+  margin-bottom: 0.25rem;
+}
+
+.town-facts p:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.town-facts p::before {
+  content: "• " / "";
+  font-size: 1.25rem;
+}
+
+/* --- Contact form --- */
 form {
   max-width: 46.25rem;
   border: 0.125rem solid #ffffff;
@@ -406,84 +516,77 @@ form > p,
   cursor: pointer;
 }
 
+/* --- Table scroll--- */
+.table-scroll {
+  border-radius: 0.4rem;
+  overflow-x: auto;
+  margin: 1.5rem 1rem;
+}
+
+.table-scroll:focus-visible {
+  outline: 0.125rem solid currentColor;
+  outline-offset: 0.125rem;
+}
+
+/* --- Teleport --- */
+.teleport {
+  margin: 1.25rem;
+}
+
+.teleport div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.teleport div > * {
+  margin: 0;
+}
+
+.teleport summary {
+  padding: 1.25rem;
+  font-size: 1.125rem;
+}
+
+/* ==========================================================================
+   6. PAGE-SPECIFIC
+   ========================================================================== */
+
+/* --- Home Page --- */
+.hero-section {
+  display: grid;
+}
+
+.hero-img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  object-position: left;
+  grid-area: 1 / 1;
+}
+
+.hero-section > .window {
+  grid-area: 1 /1;
+  justify-self: center;
+  align-self: center;
+  max-width: 37.5rem;
+  margin: 1rem 1.5rem;
+}
+
+.contact-section {
+  padding-inline: 1rem;
+}
+
 .contact-section > .window {
   margin: 1rem;
   padding: 0.75rem 0 0.5rem 0;
 }
 
-.signature p:last-of-type {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 0;
-  text-indent: 0;
-  align-items: baseline;
-  margin-left: 1.5rem;
-}
-/* #endregion */
-
-/* #region Footer */
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1.5rem;
-  background-color: #2f0999;
-  color: #ffffff;
-  align-items: baseline;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-}
-
-.footer-container p {
-  margin: 0;
-}
-
-.footer-nav ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 1.5rem;
-  margin: 0;
-  list-style: none;
-  padding-left: 0;
-}
-
-.copyright {
-  margin-bottom: 0;
-}
-/* #endregion */
-
-.town-banner {
-  margin: 0;
-}
-
-.town-banner figcaption {
-  font-size: 0.75rem;
-  margin: 0.25rem 1.25rem 1.75rem;
-}
-
-.town-banner-img {
-  display: block;
-  width: 100%;
-  height: 16rem;
-  object-fit: cover;
-  object-position: bottom;
-}
-
-.town-facts {
-  display: block;
-  font-size: 0.875rem;
-}
-
-.town-facts p {
-  margin-bottom: 0.25rem;
-}
-
-.town-facts p:last-of-type {
-  margin-bottom: 1.5rem;
-}
-
-.town-facts p::before {
-  content: "• " / "";
+/* --- Town Pages --- */
+.subheading {
   font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .know-before h2 {
@@ -498,21 +601,6 @@ form > p,
 
 .know-before li {
   padding-bottom: 1rem;
-}
-
-.resident-review blockquote {
-  font-style: italic;
-  border-left: 0.125rem solid #ffffff;
-  padding-left: 1.25rem;
-  margin-right: 1.5rem;
-}
-
-.resident-review blockquote p {
-  margin: 0;
-}
-
-.resident-review figure {
-  margin: 2.5rem 1.5rem 4rem 0;
 }
 
 .resident-review figcaption {
@@ -533,28 +621,19 @@ form > p,
   margin-bottom: 0;
 }
 
-.teleport {
-  margin: 1.25rem;
+/* --- Credits --- */
+.credits p {
+  text-align: center;
 }
 
-.teleport div > * {
-  margin: 0;
+caption h2 {
+  font-family: "Atkinson Hyperlegible Mono";
+  text-align: left;
+  word-spacing: normal;
+  padding: 0.5rem 0.75rem;
 }
 
-.teleport div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.teleport summary {
-  padding: 1.25rem;
-  font-size: 1.125rem;
-}
-
-/* #region MOONSIDE STYLES */
-
+/* --- Moonside --- */
 .moonside {
   display: none;
 }
@@ -609,53 +688,39 @@ body:has(#moonside:target) .header-nav a {
 body:has(#moonside:target) .site-name {
   filter: invert(1);
 }
-/* #endregion */
 
-.table-scroll {
-  border-radius: 0.4rem;
-  overflow-x: auto;
-  margin: 1.5rem 1rem;
+/* ==========================================================================
+   7. UTILITIES
+   ========================================================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
-table {
-  width: 100%;
-  min-width: 40rem;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  color: #0c0226;
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  z-index: 10;
 }
 
-td > a {
-  color: #0c0226;
+.skip-link:focus {
+  transform: translateY(0);
 }
 
-td > a:hover,
-td > a:focus-visible {
-  color: #c63753;
-}
+/* ==========================================================================
+   8. MEDIA QUERIES
+   ========================================================================== */
 
-th,
-caption {
-  background-color: #2f0999;
-  color: #ffffff;
-}
+/* --- 48em (tablet) --- */
 
-th,
-td,
-caption {
-  padding: 0.75rem;
-  text-align: left;
-  vertical-align: top;
-  font-size: 0.875rem;
-}
-
-caption {
-  text-decoration: underline;
-  text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.25rem;
-  font-size: 1rem;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f3fdd9;
-}
+/* --- 80em (desktop) --- */
