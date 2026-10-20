@@ -16,6 +16,10 @@
   src: url("../fonts/press-start-2p-v16-latin-regular.woff2") format("woff2");
 }
 
+main {
+  background-color: #0c0226;
+}
+
 body {
   font-family: "Atkinson Hyperlegible Mono";
   font-size: 1rem;
@@ -93,7 +97,9 @@ a:focus-visible {
 }
 
 a:active {
-  background-color: #e09828;
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
 }
 
 .sec-btn,
@@ -143,7 +149,8 @@ a:active {
 }
 
 .menu-item a:active {
-  background-color: #e09828;
+  background-color: transparent;
+  color: transparent;
 }
 
 .contact-link a {
@@ -259,7 +266,6 @@ a:active {
   font-weight: 700;
   letter-spacing: 0.03rem;
   color: #ffffff;
-  background-color: #0c0226;
 }
 
 .announcement-bar:focus .announcement-track,
@@ -299,7 +305,7 @@ a:active {
   margin: 0;
   padding: 0.5rem 1.125rem 0;
   justify-content: space-between;
-  background-color: #2f0999;
+  /* background-color: #2f0999; */
 }
 
 .site-name {
@@ -470,7 +476,7 @@ button:focus {
   height: 16rem;
   object-fit: cover;
   object-position: bottom;
-  image-rendering: pixelated;
+  /* image-rendering: pixelated; */
 }
 
 .town-facts {
@@ -537,3 +543,75 @@ button:focus {
   padding-top: 0.75rem;
   margin-bottom: 0;
 }
+
+.moonside-warning {
+  margin: 1.25rem;
+}
+
+.moonside-warning div {
+  display: flex;
+  align-items: center;
+}
+
+.moonside-warning summary {
+padding: 1.25rem;
+font-size: 1.125rem;
+}
+
+/* #region MOONSIDE STYLES */
+
+.moonside {
+  display: none;
+}
+
+body:has(#moonside:target) .moonside {
+  display: block;
+}
+
+body:has(#moonside:target) .fourside {
+  display: none;
+}
+body:has(#moonside:target),
+body:has(#moonside:target) :is(main, .window, .header-nav, .footer-container) {
+  background-color: black;
+}
+
+body:has(#moonside:target) .announcement-bar span {
+  color: black;
+}
+
+body:has(#moonside:target) .header-nav {
+  border-bottom: 0.125rem solid #f5ea53;
+}
+
+body:has(#moonside:target) .footer-container {
+  border-top: 0.125rem solid #f5ea53;
+}
+
+body:has(#moonside:target) :is(.header-nav a:hover, .footer-nav a:hover) {
+  color: #f5ea53;
+}
+
+body:has(#moonside:target) h2 {
+  color: #00c644;
+}
+
+body:has(#moonside:target) .window {
+  box-shadow:
+    0 0 0.05rem 0.2rem #00c644 inset,
+    0 0 0.05rem 0.5rem #ffffff inset,
+    0 0 0.25rem 0.75rem #00c644 inset;
+}
+
+body:has(#moonside:target) .announcement-bar {
+  background-color: #f51958;
+}
+
+body:has(#moonside:target) .header-nav a {
+  color: #f51958;
+}
+
+body:has(#moonside:target) .site-name {
+  filter: invert(1);
+}
+/* #endregion */
