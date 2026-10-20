@@ -115,7 +115,7 @@ a:focus-visible {
 .button:active {
   background-color: transparent;
   color: #ffffff;
-  transform: translateY(0.125rem)
+  transform: translateY(0.125rem);
 }
 
 .secondary {
@@ -125,11 +125,9 @@ a:focus-visible {
 }
 
 .secondary-false {
-  display: block;
-  padding: 0.25rem 0.5rem;
   font-weight: 700;
-  text-decoration: none;
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: auto;
   color: #0c0226;
 }
 
@@ -141,7 +139,9 @@ a:focus-visible {
   text-underline-offset: 0.25rem;
   margin-top: 0;
 }
-.tertiary:hover, .tertiary:focus-visible {
+
+.tertiary:hover,
+.tertiary:focus-visible {
   border-color: #ffffff;
   background-color: #ffffff;
   color: #0c0226;
@@ -151,7 +151,7 @@ a:focus-visible {
   display: block;
   color: #ffffff;
   font-weight: 400;
-  padding: 0 0.25rem; 
+  padding: 0 0.25rem;
   padding-block: 0.5rem;
   text-decoration: none;
 }
@@ -169,7 +169,7 @@ a:focus-visible {
   font-size: 0.75rem;
   padding-left: 1.25rem;
   padding-block: 0.5rem;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .contact-link a:hover {
@@ -353,19 +353,23 @@ a:focus-visible {
 
 /* #region CONTACT FORM */
 
+.contact-section {
+  padding-inline: 1rem;
+}
+
 form {
   max-width: 46.25rem;
-  margin-inline: auto;
   border: 0.125rem solid #ffffff;
   border-radius: 0.8rem;
   padding: 1rem;
-  margin: 1.5rem 1rem 2.5rem;
+  margin: 1.5rem auto 2.5rem;
 }
 
 form > p,
 .form-field > p {
   margin: 0;
   padding-top: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-field {
@@ -378,19 +382,14 @@ form > p,
 .form-field input,
 .form-field textarea {
   line-height: 1.5;
+  font-size: 0.875rem;
+  padding: 0.25rem;
 }
 
 .form-button {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
-
-/* button:hover,
-button:focus {
-  background: black;
-  color: white;
-}   */
 
 .contact-section > .window {
   margin: 1rem;
@@ -529,8 +528,8 @@ button:focus {
 }
 
 .moonside-warning summary {
-padding: 1.25rem;
-font-size: 1.125rem;
+  padding: 1.25rem;
+  font-size: 1.125rem;
 }
 
 /* #region MOONSIDE STYLES */
@@ -591,16 +590,51 @@ body:has(#moonside:target) .site-name {
 }
 /* #endregion */
 
+.table-scroll {
+  border-radius: 0.4rem;
+  overflow-x: auto;
+  margin: 1.5rem 1rem;
+}
 
 table {
   width: 100%;
+  min-width: 40rem;
   border-collapse: collapse;
- 
+  background-color: #ffffff;
+  color: #0c0226;
 }
 
-th, td {
-  padding: 0.5rem;
+td > a {
+  color: #0c0226;
+}
+
+td > a:hover,
+td > a:focus-visible {
+  color: #c63753;
+}
+
+th,
+caption {
+  background-color: #2f0999;
+  color: #ffffff;
+}
+
+th,
+td,
+caption {
+  padding: 0.75rem;
   text-align: left;
   vertical-align: top;
   font-size: 0.875rem;
+}
+
+caption {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+  font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3fdd9;
 }
