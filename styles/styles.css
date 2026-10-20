@@ -48,7 +48,7 @@ h3 {
 
 p {
   letter-spacing: -0.03rem;
-  margin: 0 2rem;
+  margin: 0 2rem 1rem;
 }
 
 .subheading {
@@ -84,10 +84,6 @@ a {
   margin-bottom: 1rem;
 }
 
-a:visited {
-  color: currentColor;
-}
-
 a:hover,
 a:focus-visible {
   color: #ffffff;
@@ -116,11 +112,14 @@ a:active {
 
 .ter-btn {
   background-color: transparent;
-  border: 0.125rem solid #ffffff;
-  color: #0c0226;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+  margin-top: 0;
 }
 .ter-btn:hover {
-  border-color: transparent;
+  border-color: #ffffff;
   background-color: #ffffff;
   color: #0c0226;
 }
@@ -207,6 +206,7 @@ a:active {
     0 0 0.25rem 0.75rem #c63753 inset;
   border-radius: 0.8rem;
   outline: 0.125rem solid #0c0226;
+  margin: 1.5rem 1rem;
 }
 
 .window p::before {
@@ -227,7 +227,13 @@ a:active {
 }
 
 .window audio {
-  width: 100%;
+  display: block;
+  width: calc(100% - 3rem);
+  margin: 1rem 1.5rem;
+}
+
+.window h2 {
+  padding: 1rem;
 }
 /* #endregion */
 
@@ -277,11 +283,6 @@ a:active {
   }
 }
 /* #endregion */
-
-.town-facts {
-  display: block;
-  font-size: 0.75rem;
-}
 
 /* ---------------  HOME PAGE LAYOUT ---------------  */
 
@@ -366,7 +367,7 @@ form {
   border: 0.125rem solid #ffffff;
   border-radius: 0.8rem;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1.5rem 1rem 2.5rem;
 }
 
 form > p,
@@ -422,7 +423,8 @@ button:focus {
   background-color: #2f0999;
   color: #ffffff;
   align-items: baseline;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
 }
 
 .footer-container p {
@@ -449,7 +451,7 @@ button:focus {
 
 .town-banner figcaption {
   font-size: 0.75rem;
-  margin: 0.25rem 1.25rem;
+  margin: 0.25rem 1.25rem 1.75rem;
 }
 
 .map-link {
@@ -469,4 +471,69 @@ button:focus {
   object-fit: cover;
   object-position: bottom;
   image-rendering: pixelated;
+}
+
+.town-facts {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.town-facts p {
+  margin-bottom: 0.25rem;
+}
+
+.town-facts p:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.town-facts p::before {
+  content: "• " / "";
+  font-size: 1.25rem;
+}
+
+.know-before h2 {
+  margin: 1.25rem;
+}
+
+.know-before ul {
+  padding-left: 2.75rem;
+  margin-inline: 0;
+  margin-right: 1.25rem;
+}
+
+.know-before li {
+  padding-bottom: 1rem;
+}
+
+.resident-review blockquote {
+  font-style: italic;
+  border-left: 0.125rem solid #ffffff;
+  padding-left: 1.25rem;
+  margin-right: 1.5rem;
+}
+
+.resident-review blockquote p {
+  margin: 0;
+}
+
+.resident-review figure {
+  margin: 2.5rem 1.5rem 4rem 0;
+}
+
+.resident-review figcaption {
+  margin: 0.75rem 1.25rem 2rem 0;
+  text-align: right;
+}
+
+.next-stop div {
+  padding-block: 1.5rem;
+}
+
+.next-stop h2 {
+  margin: 0;
+}
+
+.next-stop p:last-of-type {
+  padding-top: 0.75rem;
+  margin-bottom: 0;
 }
