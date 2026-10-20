@@ -10,39 +10,50 @@
     />
     <link rel="stylesheet" href="styles/normalize-fwd.css" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon-180x180.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="/favicon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="/favicon-512x512.png"
+      href="images/favicon-192x192.png"
     />
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
-      <!-- <p>
-        The Tourism Board accepts no liability for alien encounters, psychic
-        phenomena, or unscheduled travel to other dimensions.
-      </p> -->
-      <nav>
-        <a href="index.html">Visit Eagleland</a>
+      <nav class="header-nav" aria-label="Main">
+        <div class="contact-link">
+          <a href="index.html#contact-us">Contact us</a>
+        </div>
+
+        <a href="index.html" class="site-name"
+          ><img src="images/eagleland-logo.png" alt="Visit Eagleland home" />
+        </a>
+
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="onett.html">Onett</a></li>
-          <li><a href="fourside.html">Fourside</a></li>
-          <li><a href="credits.html" aria-current="page">Credits</a></li>
+          <li class="menu-item"><a href="onett.html">Onett</a></li>
+          <li class="menu-item"><a href="fourside.html">Fourside</a></li>
+          <li class="menu-item">
+            <a href="credits.html" aria-current="page">Credits</a>
+          </li>
         </ul>
-        <a href="index.html#contact-us" class="contact-link">Contact us</a>
       </nav>
     </header>
 
@@ -75,9 +86,9 @@
                 Reddit, r/earthbound,
                 <a
                   href="https://www.reddit.com/r/earthbound/comments/q3oo86/92cm_x_42cm_giant_earthbound_map/"
-                  target="_blank"
+                  class="sec-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to original post on Reddit (opens in a new tab)"
+                  aria-label="Link to original post on Reddit"
                   >92cm x 42cm Giant Earthbound map</a
                 >, October 7, 2021
               </td>
@@ -91,9 +102,9 @@
                 WikiBound,
                 <a
                   href="https://cdn.wikibound.info/f/f8/OnettMap.png"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >File:OnettMap.png</a
                 >, CC BY-SA 4.0
               </td>
@@ -107,9 +118,9 @@
                 WikiBound,
                 <a
                   href="https://cdn.wikibound.info/4/47/TwosonMap.png"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >File:TwosonMap.png</a
                 >, CC BY-SA 4.0
               </td>
@@ -123,9 +134,9 @@
                 WikiBound,
                 <a
                   href="https://cdn.wikibound.info/f/fb/ThreedMap.png"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >File:ThreedMap.png</a
                 >, CC BY-SA 4.0
               </td>
@@ -139,9 +150,9 @@
                 WikiBound,
                 <a
                   href="https://cdn.wikibound.info/e/e0/FoursideMap.png"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >File:FoursideMap.png</a
                 >, CC BY-SA 4.0
               </td>
@@ -160,9 +171,9 @@
                 iTunes Store,
                 <a
                   href="https://music.apple.com/ca/album/mother2-%E3%82%AE%E3%83%BC%E3%82%B0%E3%81%AE%E9%80%86%E8%A5%B2/1536706805"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to Apple Music album page (opens in a new tab)"
+                  aria-label="Link to Apple Music album page"
                 >
                   Apple Music album page</a
                 >
@@ -179,9 +190,9 @@
                 WikiBound,
                 <a
                   href="https://wikibound.info/wiki/Onett"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >Onett</a
                 >, CC BY-SA 4.0
               </td>
@@ -200,9 +211,9 @@
                 iTunes Store,
                 <a
                   href="https://music.apple.com/ca/album/mother2-%E3%82%AE%E3%83%BC%E3%82%B0%E3%81%AE%E9%80%86%E8%A5%B2/1536706805"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to Apple Music album page (opens in a new tab)"
+                  aria-label="Link to Apple Music album page"
                 >
                   Apple Music album page</a
                 >
@@ -219,9 +230,9 @@
                 WikiBound,
                 <a
                   href="https://wikibound.info/wiki/Fourside"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >Fourside</a
                 >, CC BY-SA 4.0
               </td>
@@ -235,9 +246,9 @@
                 WikiBound,
                 <a
                   href="https://cdn.wikibound.info/e/e0/MoonsideMap.png"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on WikiBound (opens in a new tab)"
+                  aria-label="Link to page on WikiBound"
                   >File:MoonsideMap.png</a
                 >, CC BY-SA 4.0
               </td>
@@ -256,9 +267,9 @@
                 iTunes Store,
                 <a
                   href="https://music.apple.com/ca/album/mother2-%E3%82%AE%E3%83%BC%E3%82%B0%E3%81%AE%E9%80%86%E8%A5%B2/1536706805"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to Apple Music album page (opens in a new tab)"
+                  aria-label="Link to Apple Music album page"
                 >
                   Apple Music album page</a
                 >
@@ -289,9 +300,9 @@
                 Reddit, r/wallpaper,
                 <a
                   href="https://www.reddit.com/r/wallpaper/comments/sqbk23/earthbound_30241964/"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to original post on Reddit (opens in a new tab)"
+                  aria-label="Link to original post on Reddit"
                   >Earthbound [3024x1964]</a
                 >, February 11, 2022
               </td>
@@ -304,9 +315,9 @@
               <td>
                 <a
                   href="https://fonts.google.com/specimen/Press+Start+2P"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to page on Google Fonts (opens in a new tab)"
+                  aria-label="Link to page on Google Fonts"
                   >Google Fonts</a
                 >
               </td>
@@ -326,9 +337,9 @@
               <td>
                 <a
                   href="https://earthbound.fandom.com/wiki/EarthBound_Wiki"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to EarthBound Wiki (opens in a new tab)"
+                  aria-label="Link to EarthBound Wiki"
                   >EarthBound Wiki (Fandom)</a
                 >
               </td>
@@ -341,9 +352,9 @@
               <td>
                 <a
                   href="https://claude.com/"
-                  target="_blank"
+                  class="ter-btn"
                   rel="noopener noreferrer"
-                  aria-label="Link to Claude (opens in a new tab)"
+                  aria-label="Link to Claude"
                   >Claude</a
                 >
               </td>
@@ -374,22 +385,19 @@
 
     <footer>
       <div class="footer-container">
-        <span>
-          <p>Questions?</p>
-          <a href="index.html#contact-us">Ask the Tourism Board</a></span
-        >
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item"><a href="onett.html">Onett</a></li>
+            <li class="menu-item"><a href="credits.html">Credits</a></li>
+            <li class="menu-item"><a href="fourside.html">Fourside</a></li>
+          </ul>
+        </nav>
         <p>
           Visit Eagleland is a fan-made school project. EarthBound and Eagleland
           belong to Nintendo.
         </p>
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="onett.html">Onett</a></li>
-            <li><a href="fourside.html">Fourside</a></li>
-            <li><a href="credits.html">Credits</a></li>
-          </ul>
-        </nav>
+        <p class="copyright">&copy; 2026, Kim Janzen</p>
       </div>
     </footer>
   </body>

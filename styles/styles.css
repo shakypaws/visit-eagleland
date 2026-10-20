@@ -73,8 +73,24 @@ p {
 .skip-link:focus {
   transform: translateY(0);
 }
-
 a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+}
+
+a:hover,
+a:focus-visible {
+  color: #f5ea53;
+}
+
+a:focus-visible {
+  outline: 0.125rem solid currentColor;
+  outline-offset: 0.125rem;
+}
+
+.button {
   display: block;
   width: fit-content;
   margin-inline: auto;
@@ -88,35 +104,36 @@ a {
   margin-bottom: 1rem;
 }
 
-a:hover,
-a:focus-visible {
+.button:hover,
+.button:focus-visible {
   color: #ffffff;
   background-color: #0c0226;
   border-color: #ffffff;
   outline-offset: 0.125rem;
 }
 
-a:active {
+.button:active {
   background-color: transparent;
-  border-color: transparent;
-  color: transparent;
+  color: #ffffff;
+  transform: translateY(0.125rem)
 }
 
-.sec-btn,
-.sec-btn-cs {
+.secondary {
   background-color: transparent;
   border: 0.125rem solid #0c0226;
   color: #0c0226;
 }
 
-.sec-btn-cs,
-.sec-btn-cs:hover {
-  border-color: transparent;
-  background-color: transparent;
+.secondary-false {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 1rem;
   color: #0c0226;
 }
 
-.ter-btn {
+.tertiary {
   background-color: transparent;
   color: #ffffff;
   text-decoration: underline;
@@ -124,78 +141,46 @@ a:active {
   text-underline-offset: 0.25rem;
   margin-top: 0;
 }
-.ter-btn:hover {
+.tertiary:hover, .tertiary:focus-visible {
   border-color: #ffffff;
   background-color: #ffffff;
   color: #0c0226;
 }
 
 .menu-item a {
+  display: block;
   color: #ffffff;
   font-weight: 400;
-  text-decoration: none;
-  padding: 0 0.25rem;
-  margin: 0;
-  background-color: transparent;
+  padding: 0 0.25rem; 
   padding-block: 0.5rem;
+  text-decoration: none;
 }
 
 .menu-item a:hover,
 .menu-item a:focus-visible {
-  border-color: transparent;
   text-decoration: underline;
   text-decoration-thickness: 0.125rem;
   text-underline-offset: 0.25rem;
 }
 
-.menu-item a:active {
-  background-color: transparent;
-  color: transparent;
-}
-
 .contact-link a {
+  display: block;
   color: #f5ea53;
   font-size: 0.75rem;
-  background-color: transparent;
-  margin: 0;
   padding-left: 1.25rem;
   padding-block: 0.5rem;
+  text-decoration: none
 }
 
 .contact-link a:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.125rem;
   text-underline-offset: 0.25rem;
-  border-color: transparent;
-  background-color: transparent;
 }
 
-/* .window-contact-link a {
-  color: #f5ea53;
-  font-size: 0.75rem;
-  background-color: transparent;
-  margin: 0;
-  padding-left: 1.25rem;
-  padding-block: 0.5rem;
-}
-
-.window-contact-link a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 0.125rem;
-  text-underline-offset: 0.25rem;
-  border-color: transparent;
-  background-color: transparent;
-} */
-
-.site-name {
-  margin-bottom: 0;
-}
-
-.site-name:hover,
-.site-name:active {
-  border-color: transparent;
-  justify-self: center;
-  background-color: transparent;
+.map-link {
+  display: block;
+  width: 100%;
 }
 
 /* #endregion */
@@ -227,7 +212,7 @@ a:active {
   padding-bottom: 0.5rem;
 }
 
-.window a {
+.window .button {
   width: auto;
   margin-inline: 1.5rem;
   text-align: center;
@@ -309,9 +294,10 @@ a:active {
 }
 
 .site-name {
-  background-color: transparent;
+  display: block;
   max-width: clamp(17.5rem, 30vw, 50vw);
-  padding: 0;
+  margin-inline: auto;
+  margin-bottom: 0;
 }
 
 .site-name img {
@@ -460,23 +446,12 @@ button:focus {
   margin: 0.25rem 1.25rem 1.75rem;
 }
 
-.map-link {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border-radius: 0;
-  background-color: transparent;
-  margin-inline: auto;
-}
-
 .town-banner-img {
   display: block;
   width: 100%;
   height: 16rem;
   object-fit: cover;
   object-position: bottom;
-  /* image-rendering: pixelated; */
 }
 
 .town-facts {
@@ -615,3 +590,17 @@ body:has(#moonside:target) .site-name {
   filter: invert(1);
 }
 /* #endregion */
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+ 
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.875rem;
+}
