@@ -66,19 +66,21 @@ h6 {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1rem + 2vw, 1.9rem);
+  margin-inline: 2rem;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1rem + 2vw, 1.75rem);
   padding-top: 3rem;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
 }
 
 p {
+  font-size: clamp(1rem, 1rem + 0.25vw, 1.125rem);
   letter-spacing: -0.03rem;
   margin: 0 2rem 1rem;
 }
@@ -172,15 +174,16 @@ figcaption {
   display: grid;
   grid-template-columns: repeat(3, auto);
   list-style: none;
+  max-width: 25rem;
   margin: 0;
+  margin-inline: auto;
   padding: 0.5rem 1.125rem 0;
   justify-content: space-between;
-  /* background-color: #2f0999; */
 }
 
 .site-name {
   display: block;
-  max-width: clamp(17.5rem, 30vw, 50vw);
+  max-width: clamp(17.5rem, 14rem + 18vw, 40rem);
   margin-inline: auto;
   margin-bottom: 0;
 }
@@ -570,7 +573,7 @@ form > p,
   grid-area: 1 /1;
   justify-self: center;
   align-self: center;
-  max-width: 37.5rem;
+  max-width: 42rem;
   margin: 1rem 1.5rem;
 }
 
@@ -721,6 +724,17 @@ body:has(#moonside:target) .site-name {
    8. MEDIA QUERIES
    ========================================================================== */
 
-/* --- 48em (tablet) --- */
+/* --- 800px (tablet) --- */
+@media (width >= 50em) {
+  /* --- Header --- */
+
+  /* --- Footer --- */
+  /* --- Town cards --- */
+  /* --- Town banner --- */
+  /* --- Hero --- */
+}
 
 /* --- 80em (desktop) --- */
+
+/* --- Town cards --- */
+/* --- Hero --- */
