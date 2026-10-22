@@ -361,6 +361,7 @@ figcaption {
 
 /* --- Text window--- */
 .window {
+  max-width: 42rem;
   color: #ffffff;
   background-color: #0c0226;
   padding: 0.25rem 0;
@@ -371,6 +372,7 @@ figcaption {
   border-radius: 0.8rem;
   outline: 0.125rem solid #0c0226;
   margin: 1.5rem 1rem;
+  margin-inline: auto;
 }
 
 .window p::before {
@@ -379,9 +381,9 @@ figcaption {
 }
 
 .window p {
+  padding: 0.25rem 0;
   padding-left: 1rem;
   text-indent: -1.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .window .button {
@@ -573,7 +575,6 @@ form > p,
   grid-area: 1 /1;
   justify-self: center;
   align-self: center;
-  max-width: 42rem;
   margin: 1rem 1.5rem;
 }
 
@@ -584,6 +585,7 @@ form > p,
 .contact-section > .window {
   margin: 1rem;
   padding: 0.75rem 0 0.5rem 0;
+  margin-inline: auto;
 }
 
 /* --- Town Pages --- */
@@ -612,16 +614,11 @@ form > p,
 }
 
 .next-stop div {
-  padding-block: 1.5rem;
+  padding-block: 1rem;
 }
 
 .next-stop h2 {
   margin: 0;
-}
-
-.next-stop p:last-of-type {
-  padding-top: 0.75rem;
-  margin-bottom: 0;
 }
 
 /* --- Credits --- */
@@ -724,17 +721,19 @@ body:has(#moonside:target) .site-name {
    8. MEDIA QUERIES
    ========================================================================== */
 
-/* --- 800px (tablet) --- */
 @media (width >= 50em) {
+  main > section {
+    max-width: 60rem;
+    margin-inline: auto;
+  }
+
   /* --- Header --- */
 
   /* --- Footer --- */
   /* --- Town cards --- */
   /* --- Town banner --- */
   /* --- Hero --- */
+    .hero-section {
+    max-width: none;
+  }
 }
-
-/* --- 80em (desktop) --- */
-
-/* --- Town cards --- */
-/* --- Hero --- */
