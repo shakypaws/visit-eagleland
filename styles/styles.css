@@ -299,6 +299,10 @@ figcaption {
   color: #0c0226;
 }
 
+.secondary:active {
+  color: #0c0226;
+}
+
 .tertiary {
   background-color: transparent;
   color: #ffffff;
@@ -343,6 +347,11 @@ figcaption {
   animation-play-state: paused;
 }
 
+.announcement-bar:focus-visible {
+  outline: 0.125rem solid #ffffff;
+  outline-offset: -0.25rem;
+}
+
 @keyframes scroll-left {
   from {
     transform: translateX(0);
@@ -355,7 +364,16 @@ figcaption {
 @media (prefers-reduced-motion: reduce) {
   .announcement-track {
     animation: none;
-    overflow-x: auto;
+    width: auto;
+  }
+
+  .announcement-track span {
+    white-space: normal;
+    padding-inline: 1rem;
+  }
+
+  .announcement-track span[aria-hidden="true"] {
+    display: none;
   }
 }
 
@@ -711,6 +729,8 @@ body:has(#moonside:target) .site-name {
   left: 0;
   transform: translateY(-100%);
   z-index: 10;
+  padding: 0.5rem 1rem;
+  background-color: #2f0999;
 }
 
 .skip-link:focus {
