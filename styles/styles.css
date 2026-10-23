@@ -101,14 +101,14 @@ a:visited {
   color: currentColor;
 }
 
-a:hover,
-a:focus-visible {
-  color: #f5ea53;
-}
-
 a:focus-visible {
   outline: 0.125rem solid currentColor;
   outline-offset: 0.125rem;
+}
+
+a:hover,
+a:focus-visible {
+  color: #f5ea53;
 }
 
 a:active {
@@ -602,6 +602,7 @@ form > p,
   border-radius: 0.4rem;
   overflow-x: auto;
   margin: 1.5rem 1rem;
+  padding-block: 0;
 }
 
 .table-scroll:focus-visible {
@@ -837,6 +838,10 @@ body:has(#moonside:target) .teleport {
 
   .teleport {
     max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .table-scroll {
     margin-inline: auto;
   }
 }
