@@ -40,8 +40,12 @@ main {
   background-color: #0c0226;
 }
 
+main > section {
+  padding-block: 1.5rem;
+}
+
 body {
-  font-family: "Atkinson Hyperlegible Mono";
+  font-family: "Atkinson Hyperlegible Mono", monospace;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -60,19 +64,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Press Start 2P";
-  text-align: center;
+  font-family: "Press Start 2P", monospace;
   word-spacing: -0.5em;
 }
 
 h1 {
   font-size: clamp(1.5rem, 1rem + 2vw, 1.9rem);
-  margin-inline: 2rem;
+  margin: 1.25rem;
+  padding-top: 1rem;
 }
 
 h2 {
   font-size: clamp(1.25rem, 1rem + 2vw, 1.75rem);
-  padding-top: 3rem;
+  margin: 1.25rem;
 }
 
 h3 {
@@ -82,7 +86,7 @@ h3 {
 p {
   font-size: clamp(1rem, 1rem + 0.25vw, 1.125rem);
   letter-spacing: -0.03rem;
-  margin: 0 2rem 1rem;
+  margin: 0 clamp(1.25rem, 0.75rem + 2vw, 2rem) 1rem;
 }
 
 /* --- Links --- */
@@ -141,23 +145,18 @@ tbody tr:nth-child(even) {
 
 /* --- Blockquotes --- */
 blockquote {
-  font-style: italic;
   border-left: 0.125rem solid #ffffff;
   padding-left: 1.25rem;
-  margin-right: 1.5rem;
 }
 
 blockquote p {
+  font-style: italic;
+  font-size: 1.25rem;
   margin: 0;
-}
-
-figure {
-  margin: 2.5rem 1.5rem 4rem 0;
 }
 
 figcaption {
   font-size: 0.875rem;
-  margin: 0.5rem 1.25rem 1.5rem;
 }
 
 /* ==========================================================================
@@ -197,8 +196,9 @@ figcaption {
 .contact-link a {
   display: block;
   color: #f5ea53;
-  font-size: 0.75rem;
-  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  text-align: right;
+  padding-right: clamp(1.25rem, 1rem + 2vw, 4rem);
   padding-block: 0.5rem;
   text-decoration: none;
 }
@@ -234,7 +234,6 @@ figcaption {
 /* --- Footer --- */
 .footer-container {
   display: grid;
-  grid-template-columns: 1fr;
   row-gap: 1.5rem;
   background-color: #2f0999;
   color: #ffffff;
@@ -245,15 +244,17 @@ figcaption {
 
 .footer-container p {
   margin: 0;
+  text-align: center;
 }
 
 .footer-nav ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
   margin: 0;
-  list-style: none;
   padding-left: 0;
+  list-style: none;
+  justify-content: center;
 }
 
 .copyright {
@@ -379,7 +380,7 @@ figcaption {
 
 /* --- Text window--- */
 .window {
-  max-width: 42rem;
+  max-width: 50rem;
   color: #ffffff;
   background-color: #0c0226;
   padding: 0.25rem 0;
@@ -390,7 +391,6 @@ figcaption {
   border-radius: 0.8rem;
   outline: 0.125rem solid #0c0226;
   margin: 1.5rem 1rem;
-  margin-inline: auto;
 }
 
 .window p::before {
@@ -416,8 +416,10 @@ figcaption {
   margin: 1rem 1.5rem;
 }
 
+.window h1,
 .window h2 {
   padding: 1rem;
+  text-align: center;
 }
 
 .signature p:last-of-type {
@@ -430,14 +432,24 @@ figcaption {
 }
 
 /* --- Town cards--- */
+.town-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 1rem;
+}
+
 .town-cards article {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 1rem;
   border-radius: 0.8rem;
   overflow: hidden;
   color: #0c0226;
   background-color: #ffffff;
+}
+
+.town-cards article > h3 {
+  text-align: center;
 }
 
 .town-cards article > p {
@@ -460,25 +472,58 @@ figcaption {
 
 /* --- Town banner--- */
 .town-banner {
+  display: grid;
   margin: 0;
 }
 
+.map-link,
 .town-banner figcaption {
-  font-size: 0.75rem;
-  margin: 0.25rem 1.25rem 1.75rem;
-}
-
-.town-banner-img {
-  display: block;
-  width: 100%;
-  height: 16rem;
-  object-fit: cover;
-  object-position: bottom;
+  grid-area: 1 / 1;
 }
 
 .map-link {
   display: block;
   width: 100%;
+}
+
+.town-banner figcaption {
+  font-size: clamp(0.75rem, 0.5rem + 0.5vw, 0.875rem);
+  justify-self: center;
+  align-self: end;
+  background-color: #0c022699;
+  backdrop-filter: blur(0.25rem);
+  padding: 0.125rem 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.4rem;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .town-banner figcaption {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .town-banner:hover figcaption,
+  .town-banner:focus-within figcaption {
+    opacity: 1;
+  }
+}
+
+.town-banner-img {
+  display: block;
+  width: 100%;
+  height: clamp(16rem, 8rem + 20vw, 28rem);
+  object-fit: cover;
+  object-position: center 65%;
+}
+
+.town-banner.fourside .town-banner-img {
+  object-position: center 35%;
+}
+
+.town-banner.moonside .town-banner-img {
+  object-position: center 70%;
 }
 
 .sharpen-img {
@@ -487,19 +532,23 @@ figcaption {
 
 /* --- Town facts--- */
 .town-facts {
-  display: block;
-  font-size: 0.875rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 0.5rem;
+  align-items: baseline;
+  font-size: clamp(0.75rem, 0.5rem + 1vw, 0.875rem);
+  max-width: 20rem;
+  margin: 0 clamp(1.25rem, 0.75rem + 2vw, 2rem) 1.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.8rem;
 }
 
-.town-facts p {
-  margin-bottom: 0.25rem;
+.town-facts dd {
+  margin: 0;
 }
 
-.town-facts p:last-of-type {
-  margin-bottom: 1.5rem;
-}
-
-.town-facts p::before {
+.town-facts dt::before {
   content: "• " / "";
   font-size: 1.25rem;
 }
@@ -553,7 +602,10 @@ form > p,
 
 /* --- Teleport --- */
 .teleport {
-  margin: 1.25rem;
+  margin: 1.5rem 1rem;
+  padding-block: 0.5rem;
+  background-color: #2f0999;
+  border-left: 0.5rem solid #f5ea53;
 }
 
 .teleport div {
@@ -568,8 +620,16 @@ form > p,
 }
 
 .teleport summary {
-  padding: 1.25rem;
+  margin: 0.5rem clamp(0.25rem, -0.25rem + 2vw, 1rem);
+  padding: 0.75rem 1rem;
   font-size: 1.125rem;
+  background-color: #ffffff1a;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.teleport summary:hover {
+  background-color: #ffffff33;
 }
 
 /* ==========================================================================
@@ -579,6 +639,7 @@ form > p,
 /* --- Home Page --- */
 .hero-section {
   display: grid;
+  padding-block: 0;
 }
 
 .hero-img {
@@ -590,7 +651,7 @@ form > p,
 }
 
 .hero-section > .window {
-  grid-area: 1 /1;
+  grid-area: 1 / 1;
   justify-self: center;
   align-self: center;
   margin: 1rem 1.5rem;
@@ -612,10 +673,6 @@ form > p,
   font-weight: 700;
 }
 
-.know-before h2 {
-  margin: 1.25rem;
-}
-
 .know-before ul {
   padding-left: 2.75rem;
   margin-inline: 0;
@@ -626,8 +683,17 @@ form > p,
   padding-bottom: 1rem;
 }
 
+.resident-review figure {
+  margin: 2rem clamp(1.25rem, 0.75rem + 2vw, 2rem) 0;
+}
+
+.resident-review blockquote {
+  margin: 0;
+}
+
 .resident-review figcaption {
-  margin: 0.75rem 1.25rem 2rem 0;
+  margin: 0.75rem 0 0;
+  padding-left: 0;
   text-align: right;
 }
 
@@ -640,29 +706,26 @@ form > p,
 }
 
 /* --- Credits --- */
-.credits p {
+.credits :is(h1, p) {
   text-align: center;
 }
 
 caption h2 {
-  font-family: "Atkinson Hyperlegible Mono";
+  font-family: "Atkinson Hyperlegible Mono", monospace;
   text-align: left;
   word-spacing: normal;
   padding: 0.5rem 0.75rem;
 }
 
 /* --- Moonside --- */
-.moonside {
+body:not(:has(#moonside:target)) .moonside {
   display: none;
-}
-
-body:has(#moonside:target) .moonside {
-  display: block;
 }
 
 body:has(#moonside:target) .fourside {
   display: none;
 }
+
 body:has(#moonside:target),
 body:has(#moonside:target) :is(main, .window, .header-nav, .footer-container) {
   background-color: black;
@@ -707,6 +770,11 @@ body:has(#moonside:target) .site-name {
   filter: invert(1);
 }
 
+body:has(#moonside:target) .teleport {
+  background-color: black;
+  border-left-color: #f51958;
+}
+
 /* ==========================================================================
    7. UTILITIES
    ========================================================================== */
@@ -741,19 +809,24 @@ body:has(#moonside:target) .site-name {
    8. MEDIA QUERIES
    ========================================================================== */
 
+@media (width >= 36em) {
+  .town-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (width >= 50em) {
   main > section {
-    max-width: 60rem;
+    max-width: 50rem;
     margin-inline: auto;
   }
 
-  /* --- Header --- */
-
-  /* --- Footer --- */
-  /* --- Town cards --- */
-  /* --- Town banner --- */
-  /* --- Hero --- */
-    .hero-section {
+  .hero-section {
     max-width: none;
+  }
+
+  .teleport {
+    max-width: 48rem;
+    margin-inline: auto;
   }
 }
